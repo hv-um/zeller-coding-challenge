@@ -13,29 +13,31 @@ function App() {
   if (error) return <h2>Error loading API</h2>;
 
   return (
-    <div className="App">
-      <h2>User Types</h2>
-      <label>
+    <div className="container mx-auto p-2">
+      <h2 className="text-lg font-bold mb-4">User Types</h2>
+      <label className="block p-4 group">
         <input type="radio"
           name="user-type"
           value="Admin"
           checked={userType === "Admin"}
           onChange={handleOption}
+          className="mr-3 group-hover:text-red"
         />
         Admin
       </label>
-      <label>
+      <label className="block p-2">
         <input type="radio"
           name="user-type"
           value="Manager"
           checked={userType === "Manager"}
           onChange={handleOption}
+          className="mr-3"
         />
         Manager
       </label>
-      <hr />
+      <hr className="my-4" />
 
-      <h2>{userType} Users</h2>
+      <h2 className="text-lg font-bold mb-4">{userType} Users</h2>
       {isLoading && <p>Loading users...</p>}
 
       <ul>
@@ -46,7 +48,7 @@ function App() {
         }
       </ul>
 
-      <hr />
+      <hr className="my-4" />
     </div>
   );
 }
