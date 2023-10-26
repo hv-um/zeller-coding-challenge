@@ -1,4 +1,11 @@
+import { UserListItem } from "./UserListItem";
+import { useGetCustomers } from "./graphql/Customers";
+
 function App() {
+  const { data, error, isLoading, isSuccess }: any = useGetCustomers();
+
+  if (error) return <h2>Error loading API</h2>;
+
   return (
     <div className="App">
       <h2>User Types</h2>
@@ -19,9 +26,13 @@ function App() {
       <hr />
 
       <h2>Users</h2>
+      {isLoading && <p>Loading users...</p>}
+
       <ul>
-        <li>User 1</li>
-        <li>User 2</li>
+        {isSuccess &&
+          data.listZellerCustomers.items
+            .map((customer) => <UserListItem key={customer.id} user={customer} />)
+        }
       </ul>
 
       <hr />
