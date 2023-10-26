@@ -35,7 +35,7 @@ function App() {
       </label>
       <hr />
 
-      <h2>Users</h2>
+      <h2>{userType} Users</h2>
       {isLoading && <p>Loading users...</p>}
 
       <ul>
