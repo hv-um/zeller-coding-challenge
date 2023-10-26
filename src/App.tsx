@@ -15,26 +15,41 @@ function App() {
   return (
     <div className="container mx-auto p-2">
       <h2 className="text-lg font-bold mb-4">User Types</h2>
-      <label className="block p-4 group">
+
+      <div className="relative">
         <input type="radio"
           name="user-type"
           value="Admin"
+          id="admin"
           checked={userType === "Admin"}
           onChange={handleOption}
-          className="mr-3 group-hover:text-red"
+          className="peer mr-3 absolute left-4 top-1/2 -translate-y-1/2"
         />
-        Admin
-      </label>
-      <label className="block p-2">
+        <label
+          className="block py-2 px-4 pl-10 peer-checked:bg-blue-100 rounded-md"
+          htmlFor="admin"
+        >
+          Admin
+        </label>
+      </div>
+
+      <div className="relative">
         <input type="radio"
           name="user-type"
           value="Manager"
+          id="manager"
           checked={userType === "Manager"}
           onChange={handleOption}
-          className="mr-3"
+          className="peer mr-3 absolute left-4 top-1/2 -translate-y-1/2"
         />
-        Manager
-      </label>
+        <label 
+          className="block py-2 px-4 pl-10 peer-checked:bg-blue-100 rounded-md"
+          htmlFor="manager"
+        >
+          Manager
+        </label>
+
+      </div>
       <hr className="my-4" />
 
       <h2 className="text-lg font-bold mb-4">{userType} Users</h2>
