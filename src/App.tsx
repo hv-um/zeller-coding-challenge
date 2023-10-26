@@ -1,24 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2>User Types</h2>
+      <label>
+        <input type="radio"
+          name="user-type"
+          value="Admin"
+        />
+        Admin
+      </label>
+      <label>
+        <input type="radio"
+          name="user-type"
+          value="Manager"
+        />
+        Manager
+      </label>
+      <hr />
+
+      <h2>Users</h2>
+      <ul>
+        <li>User 1</li>
+        <li>User 2</li>
+      </ul>
+
+      <hr />
     </div>
   );
 }
